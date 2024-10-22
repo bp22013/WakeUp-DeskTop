@@ -38,8 +38,8 @@ async def callback(request: Request):
         text = event.message.text
         line_user_id = event.source.user_id
         global a
-        if text in lightOnWords:
-            line_bot_api.push_message(line_user_id, TextSendMessage(text=lightOn))
+        if text in SwOnWords:
+            line_bot_api.push_message(line_user_id, TextSendMessage(text=swon))
             a = 1
         else:
             line_bot_api.push_message(line_user_id, TextSendMessage(text=falseWords))
@@ -59,7 +59,6 @@ async def handle_get_request():
     # line_bot_api.push_message("Ufc2f9581f7270b02bdf52f7ae30c337f", TextSendMessage(text="accept_" + str(b)))
     return {"message": f"%%%{b}%%%"}
 
-lightOn = '照明を[ON]にしました'
-SWOn = 'デスクトップの電源を[ON]にしました'
+swon = 'デスクトップの電源を[ON]にしました'
 falseWords = "ん？"
-lightOnWords = ["パソコンつけて", "パソコンおん", "パソコン付けて", "パソコン点けて", "パソコン付けといて", "pcon", "ぱそこんおん", "パソコンオン", "パソコン"]
+SwOnWords = ["パソコンつけて", "パソコンおん", "パソコン付けて", "パソコン点けて", "パソコン付けといて", "pcon", "ぱそこんおん", "パソコンオン", "パソコン"]

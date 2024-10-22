@@ -7,8 +7,11 @@ import os
 
 app = FastAPI()
 
-line_bot_api = LineBotApi(ACCESS_TOKEN)
-handler = WebhookParser(SECRET)
+access = os.environ.get("ACCESS_TOKEN")
+secret_key = os.environ.get("SECRET_KEY")
+
+line_bot_api = LineBotApi(access)
+handler = WebhookParser(secret_key)
 
 @app.post("/")
 async def callback(request: Request):

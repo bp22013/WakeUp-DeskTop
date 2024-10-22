@@ -7,10 +7,6 @@ import os
 
 app = FastAPI()
 
-# 環境変数設定
-ACCESS_TOKEN = os.getenv("LINE_ACCESS_TOKEN", "Hfyt/ngdfr5WqH/e7E9Yfv+2gchmHoBWE+gHoE754C9pEk1mnriU5iIlJ/3lLWCZH77Q9k+qB8u1FlgbxrYJxSvjLuGMkDbb1iN2qgyGQW4XIZu09JmfZ1468zXtFFnvRfqjfWqzrintM1P0jCRNuAdB04t89/1O/w1cDnyilFU=")
-SECRET = os.getenv("LINE_SECRET", "3b8aa613029acdf995cfe6abd3018965")
-
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookParser(SECRET)
 
